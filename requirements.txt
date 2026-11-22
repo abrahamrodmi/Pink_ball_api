@@ -3,6 +3,6 @@ uvicorn[standard]
 python-multipart
 joblib
 numpy
-opencv-python-headless==4.13.0
+opencv-python-headless==4.13.0.92
 scikit-learn
 scikit-image
