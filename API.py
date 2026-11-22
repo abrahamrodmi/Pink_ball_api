@@ -8,11 +8,8 @@ from fastapi.middleware.cors import CORSMiddleware
 app = FastAPI(title="Clasificador de Imágenes HOG+KNN")
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:4200",
-        "https://https://pinkballdetector.vercel.app"
-    ],
-    allow_credentials=True,
+    allow_origins=["*"],
+    allow_credentials=False,  
     allow_methods=["*"],
     allow_headers=["*"],
 )
