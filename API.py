@@ -4,8 +4,20 @@ import joblib
 import numpy as np
 import cv2 as cv
 from clasificacion import extraer_hog
-
+from fastapi.middleware.cors import CORSMiddleware
 app = FastAPI(title="Clasificador de Imágenes HOG+KNN")
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "http://localhost:4200",
+        "https://https://pinkballdetector.vercel.app"
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+
 
 RUTA_MODELO = "modelo_hog_PINK_IN_YOUR_AREA.joblib"
 try:
